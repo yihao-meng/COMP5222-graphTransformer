@@ -1,5 +1,5 @@
-# HetTransformer-model
-This repository introduces the use of HetTransformer model.
+# Application of Graph Transformer on Fake News Detection
+This repository introduces the use of Graph Transformer model in our project.
 ![avatar](/figures_and_tables/figure.png)
 
 ## Directory Structure
