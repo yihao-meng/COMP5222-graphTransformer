@@ -55,7 +55,7 @@ After generating batch files following step 1 and 2 in `data/processed_data/PHEM
 
 Place the n_neighbors.txt files following the instructions in [`models/README.md`](/models).
 
-You can download the pre-trained models following the instructions in [`models/pre-trained/README.md`](/models/pre-trained).
+You can download the pre-trained models in (/models/pre-trained).
 
 You can also load the pre-trained models in `models/pre-trained/` following the evaluation scripts decribed under `models/train_and_evaluation/`.
 
