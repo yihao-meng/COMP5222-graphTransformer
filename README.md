@@ -1,4 +1,4 @@
-# HetTransformer-model
+# Application of Graph Transformer on Fake News Detection
 This repository introduces the use of HetTransformer model.
 ![avatar](/figures_and_tables/figure.png)
 
@@ -7,18 +7,12 @@ This is the intended directory sturcture after the completion of data collection
 ```
 .
 ├── data/                               # Datasets and their processing scripts
-|   ├── FakeNewsNet/                    # Cloned FakeNewsNet repository
 |   ├── PHEME/                          # Collected and unzipped PHEME datapath
-|   ├── processed_data/                 # Pre-processed data
-|   |   ├── FakeNewsNet/                # Pre-processed FakeNewsNet data
-|   |   └── PHEME/                      # Pre-processed PHEME data
-|   ├── rwr_results/                    # Generated RWR neighbors
 |   ├── README.md                       # Data pre-processing instructions
 |   └── ...                             # Data pre-processing scripts
 ├── figures_and_tables/                 # Figures and tables in this README.md 
 ├── models/                             # Experiments-related scripts
 |   ├── train_and_evaluation/           # The model training and evaluation code
-|   ├── para_sensitivity/               # Parameter sensitivity code
 |   ├── data_splits/                    # Train-val-test split used
 |   ├── best_models/                    # The reserved model for users to run the training script to save their models
 |   └── pre-trained/                    # The pre-trained models
@@ -38,22 +32,9 @@ pip install -r requirements.txt
 ```
 
 ## 1. Dataset Collection
-Three datasets, PolitiFact, GossipCop and PHEME are used. While the collection of the first two takes many days, the last one can be done in minutes.
 
-### Collect PolitiFact and GossipCop raw data
-To compile with [Twitter Developer Policy](https://developer.twitter.com/en/developer-terms/policy), Twitter datasets cannot be shared. Hence, each developer must crawl their own copies of FakeNewsNet for PoliFact and GossipCop datasets. 
-
-First of all, run the following to get a copy of FakeNewsNet under the `data/` directory.
-```
-cd data
-git clone https://github.com/KaiDMML/FakeNewsNet
-cd ..
-```
-Then, please follow the steps in [FakeNewsNet](https://github.com/KaiDMML/FakeNewsNet).
-!! Due to the Twitter API key limits, it may take more than 20 days to collect a complete set of FakeNewsNet if you only have one Twitter API key. To verify the collection, you may follow the instructions in [`data/README.md`](https://github.com/HetTransformer/HetTransformer-model/tree/main/data).
-
-### Collect PHEME raw data
 Run the following on command line to collect PHEME under `data/`, unzip it, and rename it.
+
 ```
 cd data
 wget -O PHEME.tar.bz2 "https://ndownloader.figshare.com/files/6453753"
@@ -61,16 +42,11 @@ tar -vxf PHEME.tar.bz2
 mv pheme-rnr-dataset PHEME
 cd ..
 ```
-The zipped file is only 25M and can be downloaded in around 3 minutes.
 
 ## 2. Data Pre-processing
 Data pre-processing includes image fetching, image encoding, text encoding, graph construction, and the extraction of other features.
 The details are described in [`data/README.md`](https://github.com/HetTransformer/HetTransformer-model/tree/main/data).
 
-### The processed data for the three datasets
-We also provide a processed version of the three datasets via this [Google Drive link](https://drive.google.com/drive/folders/1jphwkYXIbRhYO3f_xmBNTq39OdSPNH0s?usp=sharing).
-
-You can download them and place them under `data/processed_data/FakeNewsNet/GossipCop/batch/`, `data/processed_data/FakeNewsNet/PolitiFact/batch/` and `data/processed_data/PHEME/batch/` respectively in align with the data paths described in training_and_evaluation scripts.
 
 ## 3. Model Training and evaluation
 After generating batch files following step 1 and 2 in `data/processed_data/FakeNewsNet/PolitiFact/batch/`; `data/processed_data/FakeNewsNet/GossipCop/batch/`; `data/processed_data/PHEME/batch/` respectively. 
