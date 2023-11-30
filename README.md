@@ -1,5 +1,7 @@
 # Application of Graph Transformer on Fake News Detection
+
 This repository introduces the use of Graph Transformer model in our project.
+
 ![avatar](/figures_and_tables/figure.png)
 
 ## Directory Structure
@@ -34,6 +36,7 @@ pip install -r requirements.txt
 ## 1. Dataset Collection
 
 Run the following on command line to collect PHEME under `data/`, unzip it, and rename it.
+
 ```
 cd data
 wget -O PHEME.tar.bz2 "https://ndownloader.figshare.com/files/6453753"
@@ -41,10 +44,10 @@ tar -vxf PHEME.tar.bz2
 mv pheme-rnr-dataset PHEME
 cd ..
 ```
-The zipped file is only 25M and can be downloaded in around 3 minutes.
 
 ## 2. Data Pre-processing
 Data pre-processing includes image fetching, image encoding, text encoding, graph construction, and the extraction of other features.
+
 The details are described in [`data/README.md`](https://github.com/yihao-meng/COMP5222-graphTransformer/blob/main/data/README.md).
 
 ## 3. Model Training and evaluation
