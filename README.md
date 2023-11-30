@@ -51,7 +51,7 @@ Data pre-processing includes image fetching, image encoding, text encoding, grap
 The details are described in [`data/README.md`](https://github.com/yihao-meng/COMP5222-graphTransformer/blob/main/data/README.md).
 
 ## 3. Model Training and evaluation
-After generating batch files following step 1 and 2 in `data/processed_data/FakeNewsNet/PolitiFact/batch/`; `data/processed_data/FakeNewsNet/GossipCop/batch/`; `data/processed_data/PHEME/batch/` respectively. 
+After generating batch files following step 1 and 2 in `data/processed_data/PHEME/batch/`. 
 
 Place the n_neighbors.txt files following the instructions in [`models/README.md`](/models).
 
